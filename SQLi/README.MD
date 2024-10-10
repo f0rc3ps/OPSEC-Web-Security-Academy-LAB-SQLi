@@ -19,4 +19,5 @@ To solve the lab, perform a SQL injection attack that causes the application to 
 Find this SQLi vulnerability in this lab then attack the web application, then go access the web application and delete user `Mark Cooper`
 ```
 [Useful link:](https://github.com/nu11secur1ty/G0BurpSQLmaPI)
-Good Luck !
+
+Good Luck everyone!
