@@ -12,7 +12,7 @@ docker run -d f0rc3ps/sqli -p 8000:80
 
 - Get docker
 ```bash
-git clone https://github.com/nu11secur1ty/mysql8.0-php7-apache2.4-docker.git
+~git clone https://github.com/f0rc3ps/OPSEC-Web-Security-Academy-LABS.git~
 ```
 - Compose
 ```
