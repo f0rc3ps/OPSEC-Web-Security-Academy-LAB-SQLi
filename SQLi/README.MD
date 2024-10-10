@@ -16,7 +16,7 @@ docker-compose up -d
 
 =====================================================================
 
-- Open web browser to look php7 at [http://localhost:8001/info.php](http://localhost:8001/info.php)
+- Open web browser to look php8 at [http://localhost:8001/info.php](http://localhost:8001/info.php)
 
 =====================================================================
 
