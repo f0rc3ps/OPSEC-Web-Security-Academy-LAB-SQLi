@@ -6,7 +6,8 @@ RUN docker-php-ext-install mysqli
 #COPY ssl/server.key /etc/ssl/private/server.key
 #COPY ssl/server.crt /etc/ssl/certs/server.pem
 
-COPY php-scrm/* /war/www/html/
+RUN mkdir -p /var/www/html/php-scrm
+COPY /php-scrm/* /war/www/html/
 
 RUN echo "ServerName localhost:80" >> /etc/apache2/apache2.conf
 RUN sed -i 's/ssl-cert-snakeoil/server/' /etc/apache2/sites-available/default-ssl.conf
