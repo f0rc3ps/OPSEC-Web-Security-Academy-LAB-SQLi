@@ -26,7 +26,7 @@ EXPOSE 3306
 CMD ["mysqld"]
 
 RUN mkdir -p /var/www/html/php-scrm
-# COPY ./php-scrm/* /war/www/html/
+COPY /php-scrm/ /war/www/html/php-scrm/
 
 RUN echo "ServerName localhost:80" >> /etc/apache2/apache2.conf
 RUN sed -i 's/ssl-cert-snakeoil/server/' /etc/apache2/sites-available/default-ssl.conf
