@@ -3,12 +3,10 @@
 - Docker example with Apache, MySql 8.0, PhpMyAdmin and Php7
 - docker-compose orchestrator
 
-- Get docker
+- Run the LAB
 ```bash
-git clone 
-```
-- Compose
-```
+git clone https://github.com/f0rc3ps/OPSEC-Web-Security-Academy-LABS.git
+cd SQLi
 docker-compose up -d
 ```
 
@@ -16,14 +14,4 @@ docker-compose up -d
 
 =====================================================================
 
-- Open web browser to look php8 at [http://localhost:8001/info.php](http://localhost:8001/info.php)
-
-=====================================================================
-
-- Open app.php on [http://localhost:8001/app.php](http://localhost:8001/app.php)
-
-Run mysql client:
-
-- `docker-compose exec db mysql -u root -p` 
-
-Enjoy !
+Good Luck !
