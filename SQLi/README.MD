@@ -1,11 +1,11 @@
-# mysql8.0-php8.1-apache2.4-docker
+# OPSEC Web Security Academy SQLi LAB
 
 - Docker example with Apache, MySql 8.0, PhpMyAdmin and Php7
 - docker-compose orchestrator
 
 - Get docker
 ```bash
-git clone https://github.com/nu11secur1ty/mysql8.0-php7-apache2.4-docker.git
+git clone 
 ```
 - Compose
 ```
