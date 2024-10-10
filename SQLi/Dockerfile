@@ -60,16 +60,5 @@ RUN rm -rf /var/www/html/*
 # copy folders
 COPY /scrm/. /var/www/html/
 
-# users
-COPY /sec/makesec.sh /
-
-# Protect 
-# RUN chmod +x ./makesec.sh
-RUN touch /etc/apache2/secret
-COPY /sec/protect /etc/apache2/secret
-ADD .htaccess /var/www/html/
-RUN rm /etc/apache2/apache2.conf
-ADD apache2.conf /etc/apache2/apache2.conf
-
 # Start apache
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
