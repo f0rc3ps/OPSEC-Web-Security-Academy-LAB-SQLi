@@ -11,9 +11,9 @@ docker run -d f0rc3ps/sqli -p 8000:80
 ```
 
 - Get docker
-```bash
+
 ~git clone https://github.com/f0rc3ps/OPSEC-Web-Security-Academy-LABS.git~
-```
+
 - Compose
 ```
 docker-compose up -d
