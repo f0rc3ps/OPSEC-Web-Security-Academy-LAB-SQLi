@@ -13,5 +13,10 @@ docker-compose up -d
 - Open phpmyadmin at [http://localhost:8000](http://localhost:8000)
 
 =====================================================================
-
+# SQLi
+```
+To solve the lab, perform a SQL injection attack that causes the application to display one or more errors.
+Find this SQLi vulnerability in this lab then attack the web application, then go access the web application and delete user `Mark Cooper`
+```
+[Useful link:](https://github.com/nu11secur1ty/G0BurpSQLmaPI)
 Good Luck !
