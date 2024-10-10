@@ -7,8 +7,6 @@ cd SQLi
 docker-compose up -d
 ```
 
-- Open phpmyadmin at [http://localhost:8000](http://localhost:8000)
-
 =====================================================================
 # SQLi LAB
 ```xml
