@@ -34,8 +34,8 @@ EXPOSE 3306
 # Start the MySQL server when the container is run
 CMD ["mysqld"]
 
-# RUN mkdir -p /var/www/html/scrm/
-COPY /scrm/. /war/www/html/
+RUN mkdir -p /var/www/html/scrm/
+# COPY /scrm/. /war/www/html/
 
 RUN echo "ServerName localhost:80" >> /etc/apache2/apache2.conf
 RUN sed -i 's/ssl-cert-snakeoil/server/' /etc/apache2/sites-available/default-ssl.conf
