@@ -39,7 +39,7 @@ RUN rm -rf /var/www/html/*
 RUN mkdir -p /var/www/html/scrm/
 # copy folders
 WORKDIR /var/www/html/scrm/
-COPY scrm/ /var/www/html/scrm/
+COPY php-scrm.zip /var/www/html/scrm/
 
 # Start apache
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
