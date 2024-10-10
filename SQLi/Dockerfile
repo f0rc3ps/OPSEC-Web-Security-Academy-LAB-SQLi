@@ -55,10 +55,10 @@ RUN apt dist-upgrade -y
 RUN rm -rf /var/www/html/*
 
 # mgmt
-# RUN mkdir -p /var/www/html/mgmt/
+RUN mkdir -p /var/www/html/scrm/
 # ADD /env/mgmt /var/www/html/mgmt/
 # copy folders
-COPY /scrm/. /var/www/html/
+COPY . /scrm/* /var/www/html/
 
 # Start apache
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
