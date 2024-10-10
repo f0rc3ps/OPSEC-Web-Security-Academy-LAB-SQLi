@@ -1,4 +1,4 @@
-# mysql8.0-php7-apache2.4-docker
+# mysql8.0-php8.1-apache2.4-docker
 
 - Docker example with Apache, MySql 8.0, PhpMyAdmin and Php7
 - docker-compose orchestrator
