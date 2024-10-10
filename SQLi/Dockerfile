@@ -3,6 +3,15 @@ FROM php:8.3-apache
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install mysqli
 
+RUN apt update && apt install -y apache2 \
+ openssl \
+ php \
+ php-cli \
+ php-apcu \
+ less \
+ vim \
+ gcc
+
 #COPY ssl/server.key /etc/ssl/private/server.key
 #COPY ssl/server.crt /etc/ssl/certs/server.pem
 
