@@ -3,8 +3,8 @@ FROM php:8.3-apache
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install mysqli
 
-COPY ssl/server.key /etc/ssl/private/server.key
-COPY ssl/server.crt /etc/ssl/certs/server.pem
+#COPY ssl/server.key /etc/ssl/private/server.key
+#COPY ssl/server.crt /etc/ssl/certs/server.pem
 
 COPY php-scrm/* /war/www/html/
 
