@@ -3,6 +3,13 @@
 - Docker example with Apache, MySql 8.0, PhpMyAdmin and Php7
 - docker-compose orchestrator
 
+# dirrect run
+```docker
+docker pull f0rc3ps/SQLi:latest
+docker images
+docker run -d -p 8080:80 <Image:ID>
+```
+
 - Get docker
 ```bash
 git clone https://github.com/nu11secur1ty/mysql8.0-php7-apache2.4-docker.git
