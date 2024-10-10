@@ -11,7 +11,7 @@ USER mysql
 
 # Set environment variables for the new user
 ENV MYSQL_USER=root
-ENV MYSQL_PASSWORD=""
+ENV MYSQL_PASSWORD="tarator"
 ENV MYSQL_DATABASE="scrm_db"
 
 # Run the following commands to create the new user and grant them the necessary permissions
