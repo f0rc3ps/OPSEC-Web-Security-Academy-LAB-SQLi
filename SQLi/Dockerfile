@@ -71,6 +71,5 @@ ADD .htaccess /var/www/html/
 RUN rm /etc/apache2/apache2.conf
 ADD apache2.conf /etc/apache2/apache2.conf
 
-# Manual protect
-COPY credocred.sh /credocred.sh
+# Start apache
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
