@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+### ub1nu11 service
+  ub1nu11:
+    build: .
+    container_name: ub1nu11
+    restart: always
+    ports:
+      - "80:80"
+    #image: "f0rc3ps/ub1nu11:latest"
+
+### Grafana 
+  grafana:
+    image: grafana/grafana-enterprise
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+     - '3000:3000'
+
+### TheHive
+  elasticsearch:
+    image: elasticsearch:7.9.1
+    environment:
+      - http.host=0.0.0.0
+      - discovery.type=single-node
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+  cortex:
+    image: thehiveproject/cortex:3.1.0-1
+    depends_on:
+      - elasticsearch
+    ports:
+      - "0.0.0.0:9001:9001"
+  thehive:
+    image: thehiveproject/thehive:3.5.0-1
+    depends_on:
+      - elasticsearch
+      - cortex
+    ports:
+      - "0.0.0.0:9000:9000"
+    command: --cortex-port 9001
+
+### Spiderfoot
+  spiderfoot:
+    build:
+      context: ./
+    volumes:
+      - spiderfoot-data:/var/lib/spiderfoot
+    image: "josaorg/spiderfoot:stable"
+    container_name: spiderfoot
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
+
+volumes:
+  spiderfoot-data:

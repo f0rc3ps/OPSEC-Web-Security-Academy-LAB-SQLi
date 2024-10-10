@@ -1,38 +1,80 @@
-FROM php:8.3-apache
+# ub1nu11 v 2024.1
+FROM debian:latest
+ENV DEBIAN_FRONTEND noninteractive
+# RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+MAINTAINER "@nu11secur1ty version 4.0"
 
-RUN docker-php-ext-install pdo_mysql
-RUN docker-php-ext-install mysqli
+# Ubuntu LAMP stack with Apache, MariaDB, PHP, and SSL
+ENV DEBIAN_FRONTEND noninteractive
 
-#COPY ssl/server.key /etc/ssl/private/server.key
-#COPY ssl/server.crt /etc/ssl/certs/server.pem
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+ENV APACHE_LOCK_DIR /var/lock/apache2
+ENV APACHE_PID_FILE /var/run/apache2.pid
 
-# Set the default user for the MySQL image
-USER mysql
+# Install Apache, SSL, PHP, and some PHP modules
 
-# Set environment variables for the new user
-ENV MYSQL_USER=root
-ENV MYSQL_PASSWORD="tarator"
-ENV MYSQL_DATABASE="scrm_db"
+RUN apt update && apt install -y apache2 \
+ openssl \
+ php \
+ php-cli \
+ php-apcu \
+ less \
+ vim \
+ gcc
 
-# Run the following commands to create the new user and grant them the necessary permissions
-RUN mysql -u root -p -e "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';"
-RUN mysql -u root -p -e "GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';"
-RUN mysql -u root -p -e "FLUSH PRIVILEGES;"
+# Install MariaDB and set default root password
 
-# Expose port 3306 to allow connections to the database
-EXPOSE 3306
+RUN echo 'mariadb-server mariadb-server/root_password  password mypassword' | debconf-set-selections
+RUN echo 'mariadb-server mariadb-server/root_password_again password mypassword' | debconf-set-selections
+RUN apt-get install mariadb-server -y
 
-# Start the MySQL server when the container is run
-CMD ["mysqld"]
+# Disable the default Apache site config
+# Install your site's Apache configuration and activate SSL
 
-RUN mkdir -p /var/www/html/scrm/
-ADD scrm /war/www/html/scrm
+# ADD your_apache.conf /etc/apache2/sites-available/
+RUN a2dissite 000-default
+RUN a2enmod ssl
 
-RUN echo "ServerName localhost:80" >> /etc/apache2/apache2.conf
-RUN sed -i 's/ssl-cert-snakeoil/server/' /etc/apache2/sites-available/default-ssl.conf
-RUN a2enmod rewrite
-RUN a2enmod headers
-# RUN a2enmod ssl
-# RUN a2ensite default-ssl
+# Remove APT files
+RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# Update and packages
+RUN apt update -y
+RUN apt dist-upgrade -y
+RUN apt install -y nmap \
+vim \
+net-tools 
+RUN apt update -y
+RUN apt dist-upgrade -y
+
+EXPOSE 443 8080
+
+# Clean Evironment
+RUN rm -rf /var/www/html/*
+
+# mgmt
+# RUN mkdir -p /var/www/html/mgmt/
+# ADD /env/mgmt /var/www/html/mgmt/
+# copy folders
+COPY /scrm/. /var/www/html/
+
+# users
+COPY /sec/makesec.sh /
+
+# Protect 
+# RUN chmod +x ./makesec.sh
+RUN touch /etc/apache2/secret
+COPY /sec/protect /etc/apache2/secret
+ADD .htaccess /var/www/html/
+RUN rm /etc/apache2/apache2.conf
+ADD apache2.conf /etc/apache2/apache2.conf
+
+# Manual protect
+COPY credocred.sh /credocred.sh
+
+# Apache
+COPY 000-default.conf /etc/apache2/sites-enabled/
+COPY 000-default.conf /etc/apache2/sites-available/
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

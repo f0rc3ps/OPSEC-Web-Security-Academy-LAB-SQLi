@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            /* Add image */
+            background-image: url("background.png");
+ 
+            /* Make image center */
+            background-position: center center;
+ 
+            /* Make image fixed */
+            background-attachment: fixed;
+ 
+            /* Not repeat images */
+            background-repeat: no-repeat;
+ 
+            /* Set background size 100% */
+            background-size: 100%;
+        }
+        
+        h1 {
+  font-size: 35px;
+}
+    </style>
+</head>
+
+		<script>
+	function setHref() {
+
+	document.getElementById('siem').href = window.location.protocol = 'https://' + window.location.hostname + "/app/login?";
+	 }
+if (window.location.protocol !== 'http:') {
+    window.location.href = 'https://' + window.location.hostname + + window.location.pathname + window.location.search;
+
+}
+	 
+</script>
+
+<body onload="setHref()">
+	<a href="" target="_blank" class="link" id="siem"><b><h1><p style="color:white;">SIEM</p></h1></b></a>
+</body>
+
+</center>
+</html>
