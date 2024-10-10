@@ -7,7 +7,7 @@
 ```docker
 docker pull f0rc3ps/sqli:latest
 docker images
-docker run -d -p 8080:80 <Image:ID>
+docker run -d f0rc3ps/sqli -p 8000:80
 ```
 
 - Get docker
