@@ -5,7 +5,7 @@
 
 # dirrect run
 ```docker
-docker pull f0rc3ps/SQLi:latest
+docker pull f0rc3ps/sqli:latest
 docker images
 docker run -d -p 8080:80 <Image:ID>
 ```
