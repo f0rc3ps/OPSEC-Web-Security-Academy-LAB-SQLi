@@ -3,7 +3,7 @@
 - Docker example with Apache, MySql 8.0, PhpMyAdmin and Php7
 - docker-compose orchestrator
 
-# dirrect run
+# direct starting of the lab
 ```docker
 docker pull f0rc3ps/sqli:latest
 docker images
