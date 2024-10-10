@@ -15,9 +15,9 @@ docker run -d f0rc3ps/sqli -p 8000:80
 ~git clone https://github.com/f0rc3ps/OPSEC-Web-Security-Academy-LABS.git~
 
 - Compose
-```
-docker-compose up -d
-```
+
+~docker-compose up -d~
+
 
 - Open phpmyadmin at [http://localhost:8000](http://localhost:8000)
 
