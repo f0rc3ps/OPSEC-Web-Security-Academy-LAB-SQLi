@@ -49,7 +49,7 @@ net-tools
 RUN apt update -y
 RUN apt dist-upgrade -y
 
-EXPOSE 443 8080
+№ EXPOSE 443 8080
 
 # Clean Evironment
 RUN rm -rf /var/www/html/*
