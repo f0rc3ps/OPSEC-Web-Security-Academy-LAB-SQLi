@@ -26,16 +26,4 @@ services:
             - persistent:/var/lib/mysql
         networks:
             - default
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        links: 
-            - db:db
-        ports:
-            - 8000:80
-        environment:
-            MYSQL_USER: root
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
-volumes:
-    persistent:
     
