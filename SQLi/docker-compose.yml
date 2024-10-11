@@ -10,7 +10,7 @@ services:
     #        - db
     #    networks:
     #        - default
-    db:
+    # db:
         image: mysql:8.0
         ports: 
             - "3306:3306"
