@@ -11,7 +11,7 @@ docker-compose up -d
 # SQLi LAB
 ```xml
 To solve the lab, perform a SQL injection attack that causes the application to display one or more errors.
-Find this SQLi vulnerability in this lab then attack the web application, ten describe
+Find this SQLi vulnerability in this lab then attack the web application, then you must describe all user of this application, which basicly you can't see it!
 ```
 [Useful link:](https://github.com/nu11secur1ty/G0BurpSQLmaPI)
 
