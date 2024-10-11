@@ -1,11 +1,11 @@
 <?php include('db_connect.php') ?>
 <?php
-$twhere ="";
-if($_SESSION['login_type'] != 1)
-  $twhere = "  ";
+//$twhere ="";
+//if($_SESSION['login_type'] != 1)
+//  $twhere = "  ";
 ?>
 <!-- Info boxes -->
-<?php if($_SESSION['login_type'] == 1): ?>
+<?php //if($_SESSION['login_type'] == 1): ?>
         <div class="row">
           <div class="col-12 col-sm-6 col-md-4">
             <div class="small-box bg-light shadow-sm border">
