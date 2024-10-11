@@ -65,7 +65,6 @@
 	 <div class="col-12">
           <div class="card">
           	<div class="card-body">
-          		Welcome <?php echo $_SESSION['login_name'] ?>!
           	</div>
           </div>
       </div>
