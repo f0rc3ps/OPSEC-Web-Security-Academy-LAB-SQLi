@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 11, 2024 at 09:30 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: db
+-- Generation Time: Oct 11, 2024 at 07:41 AM
+-- Server version: 8.0.39
+-- PHP Version: 8.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `password` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
@@ -47,18 +47,18 @@ INSERT INTO `admin` (`id`, `name`, `password`) VALUES
 --
 
 CREATE TABLE `prequest` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `contactno` varchar(11) DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
-  `services` text DEFAULT NULL,
+  `services` text,
   `others` varchar(255) DEFAULT NULL,
-  `query` longtext DEFAULT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `query` longtext,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
   `posting_date` date DEFAULT NULL,
-  `remark` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `remark` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `prequest`
@@ -74,19 +74,19 @@ INSERT INTO `prequest` (`id`, `name`, `email`, `contactno`, `company`, `services
 --
 
 CREATE TABLE `ticket` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `ticket_id` varchar(11) DEFAULT NULL,
   `email_id` varchar(300) DEFAULT NULL,
   `subject` varchar(300) DEFAULT NULL,
   `task_type` varchar(300) DEFAULT NULL,
   `prioprity` varchar(300) DEFAULT NULL,
-  `ticket` longtext DEFAULT NULL,
+  `ticket` longtext,
   `attachment` varchar(300) DEFAULT NULL,
   `status` varchar(300) DEFAULT NULL,
-  `admin_remark` longtext DEFAULT NULL,
+  `admin_remark` longtext,
   `posting_date` date DEFAULT NULL,
-  `admin_remark_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `admin_remark_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ticket`
@@ -103,7 +103,7 @@ INSERT INTO `ticket` (`id`, `ticket_id`, `email_id`, `subject`, `task_type`, `pr
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `alt_email` varchar(255) DEFAULT NULL,
@@ -111,9 +111,9 @@ CREATE TABLE `user` (
   `mobile` varchar(255) DEFAULT NULL,
   `gender` varchar(255) DEFAULT NULL,
   `address` varchar(500) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
-  `posting_date` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `status` int DEFAULT NULL,
+  `posting_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -121,7 +121,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `alt_email`, `password`, `mobile`, `gender`, `address`, `status`, `posting_date`) VALUES
 (1, 'Admin Administrator', 'info@mail.com', 'admin@mail.com', 'admin123', '1234567890', 'male', 'Block 6, Lot 14, 23 St., Here City, Down There, 2306 ', NULL, '2021-04-22 12:25:19'),
-(2, 'Mark Cooper1', 'mcooper@mail.com', '', 'mcooper1234', '', 'male', 'Sample Address only', NULL, '2022-11-29 03:28:28');
+(2, 'Mark Cooper', 'mcooper@mail.com', 'mcoop123@mail.com', 'mcooper1234', '09123654789', 'm', 'Sample Address only', NULL, '2022-11-29 03:28:28');
 
 -- --------------------------------------------------------
 
@@ -130,17 +130,17 @@ INSERT INTO `user` (`id`, `name`, `email`, `alt_email`, `password`, `mobile`, `g
 --
 
 CREATE TABLE `usercheck` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `logindate` varchar(255) DEFAULT '',
   `logintime` varchar(255) DEFAULT '',
-  `user_id` int(11) DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT '',
   `ip` varbinary(16) DEFAULT NULL,
   `mac` varbinary(16) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `usercheck`
@@ -192,31 +192,31 @@ ALTER TABLE `usercheck`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `prequest`
 --
 ALTER TABLE `prequest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `usercheck`
 --
 ALTER TABLE `usercheck`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
