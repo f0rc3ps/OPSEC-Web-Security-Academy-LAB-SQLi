@@ -16,7 +16,7 @@ Then you must exploit the application and present a PAYLOAD - `REQUIRED`! We wil
 
 
 # Report
-- Please you this form to report the problem and describe it!
+- Please use this form to report the problem and describe it!
 - Any other ways will be not accept!
 
 [form](https://github.com/f0rc3ps/OPSEC-Web-Security-Academy-LABS/blob/main/SQLi/report.txt)
