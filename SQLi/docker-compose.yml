@@ -9,7 +9,7 @@ services:
     #    links:
     #        - db
         networks:
-            - default
+    #        - default
     db:
         image: mysql:8.0
         ports: 
