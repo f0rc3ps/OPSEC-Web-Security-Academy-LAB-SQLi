@@ -13,7 +13,6 @@ STATUS: HIGH- Vulnerability
 
 
 [+]Exploits:
-- SQLi Multiple:
 ```
 ```
 
