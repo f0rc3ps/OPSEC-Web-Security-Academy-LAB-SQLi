@@ -6,10 +6,6 @@ services:
             - "80:80"
         volumes:
             - ./www:/var/www/html/
-        links:
-            - db
-        networks:
-            - default
     db:
         image: mysql:8.0
         ports: 
