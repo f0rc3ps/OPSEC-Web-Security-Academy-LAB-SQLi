@@ -7,12 +7,12 @@ git clone https://github.com/f0rc3ps/OPSEC-Web-Security-Academy-LABS.git && cd O
 
 =====================================================================
 # SQLi LAB
-```xml
+
 To solve the lab, perform a SQL injection attack that causes the application to display one or more errors.
 Find this SQLi vulnerability in this lab then attack the web application, then you must describe all vulnerable `parameters` of this application.
 If you decribe a sometning elese you will never solve the lab!
 Then you must exploit the application and present a PAYLOAD - `REQUIRED`! We will not accept the reports - `WITHOUT PAYLOADS`!
-```
+
 
 
 # Report
