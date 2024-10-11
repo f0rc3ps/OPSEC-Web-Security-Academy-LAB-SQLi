@@ -1,0 +1,24 @@
+## Titles: 
+## Author: 
+## Date: 
+## Vendor: 
+## Software: 
+## Reference: 
+
+## Description:
+
+
+
+STATUS: HIGH- Vulnerability
+
+
+[+]Exploits:
+- SQLi Multiple:
+```
+```
+
+## Reproduce:
+
+
+## Time spent:
+
