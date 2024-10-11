@@ -7,7 +7,7 @@ services:
         volumes:
             - ./www:/var/www/html/
         links:
-            - db
+    #        - db
         networks:
             - default
     db:
