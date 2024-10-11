@@ -78,7 +78,7 @@
                 <span class="info-box-number">
                 <?php 
                     $services = $conn->query("SELECT sum(id) as total FROM `booking_list` where status = 0 ")->fetch_assoc()['total'];
-                    echo number_format($services);
+                    //echo number_format($services);
                   ?>
                 </span>
               </div>
