@@ -26,12 +26,7 @@ services:
             - persistent:/var/lib/mysql
         networks:
             - default
-        links: 
-            - db:db
-        environment:
-            MYSQL_USER: root
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
+        links:  
 volumes:
     persistent:
 networks:
