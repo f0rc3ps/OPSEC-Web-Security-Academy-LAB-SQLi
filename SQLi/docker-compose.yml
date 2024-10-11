@@ -6,7 +6,6 @@ services:
             - "80:80"
         volumes:
             - ./www:/var/www/html/
-    db:
         image: mysql:8.0
         ports: 
             - "3306:3306"
