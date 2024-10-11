@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2024 at 09:18 AM
+-- Generation Time: Oct 11, 2024 at 09:30 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -120,7 +120,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `alt_email`, `password`, `mobile`, `gender`, `address`, `status`, `posting_date`) VALUES
-(1, 'Admin Administrator', 'info@mail.com', 'admin@mail.com', 'n@m@1k1T1p4kUtU', '1234567890', 'male', 'Block 6, Lot 14, 23 St., Here City, Down There, 2306 ', NULL, '2021-04-22 12:25:19'),
+(1, 'Admin Administrator', 'info@mail.com', 'admin@mail.com', 'admin123', '1234567890', 'male', 'Block 6, Lot 14, 23 St., Here City, Down There, 2306 ', NULL, '2021-04-22 12:25:19'),
 (2, 'Mark Cooper1', 'mcooper@mail.com', '', 'mcooper1234', '', 'male', 'Sample Address only', NULL, '2022-11-29 03:28:28');
 
 -- --------------------------------------------------------
