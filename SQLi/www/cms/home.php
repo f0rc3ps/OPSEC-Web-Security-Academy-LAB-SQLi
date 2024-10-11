@@ -62,8 +62,6 @@
           </div>
             <?php endforeach; ?>
       </div>
-
-<?php //else: ?>
 	 <div class="col-12">
           <div class="card">
           	<div class="card-body">
@@ -72,4 +70,4 @@
           </div>
       </div>
           
-<?php endif; ?>
+
