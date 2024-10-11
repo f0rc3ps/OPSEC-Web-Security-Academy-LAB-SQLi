@@ -32,7 +32,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `password`) VALUES
-(1, 'admin', 'admin123');
+(1, 'admin', 'n@m@1k1T1p4kUtU');
 
 -- --------------------------------------------------------
 
