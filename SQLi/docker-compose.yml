@@ -28,8 +28,6 @@ services:
             - default
         links: 
             - db:db
-        ports:
-            - 8092:80
         environment:
             MYSQL_USER: root
             MYSQL_PASSWORD: test
