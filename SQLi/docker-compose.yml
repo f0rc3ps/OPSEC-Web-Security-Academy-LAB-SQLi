@@ -26,7 +26,6 @@ services:
             - persistent:/var/lib/mysql
         networks:
             - default
-        links:  
 volumes:
     persistent:
 networks:
