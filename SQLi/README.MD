@@ -5,6 +5,10 @@
 git clone https://github.com/f0rc3ps/OPSEC-Web-Security-Academy-LABS.git && cd OPSEC-Web-Security-Academy-LABS/SQLi/ && docker-compose up -d
 ```
 
+Open your browser:
+```
+http://0.0.0.0/cms/
+```
 =====================================================================
 # SQLi LAB
 
